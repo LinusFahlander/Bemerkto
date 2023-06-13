@@ -1,0 +1,88 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register Account";
+}
+
+<section class="register-form">
+    <div class="container">
+        <div class="title">Please register your new Account</div>
+
+        <form asp-action="Index" asp-controller="Register" method="post" novalidate>
+
+            <div class="FirstName">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" onkeyup="validateText(event)"/>
+                <small class="text-danger"><span asp-validation-for="FirstName"></span></small>
+            </div>
+
+            <div class="LastName">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="LastName"></span></small>
+            </div>
+
+            <div class="StreetName">
+                <label asp-for="StreetName"></label>
+                <input asp-for="StreetName" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="StreetName"></span></small>
+            </div>
+
+            <div class="PostalCode">
+                <label asp-for="PostalCode"></label>
+                <input asp-for="PostalCode" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="PostalCode"></span></small>
+            </div>
+
+            <div class="City">
+                <label asp-for="City"></label>
+                <input asp-for="City" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="City"></span></small>
+            </div>
+
+            <div class="PhoneNumber">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="PhoneNumber"></span></small>
+            </div>
+
+            <div class="CompanyName">
+                <label asp-for="CompanyName"></label>
+                <input asp-for="CompanyName" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="CompanyName"></span></small>
+            </div>
+
+            <div class="Email">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="email" onkeyup="validateEmail(event)" />
+                <small class="text-danger"><span asp-validation-for="Email"></span></small>
+            </div>
+
+            <div class="Password">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" type="password" onkeyup="validatePassword(event)" />
+                <small class="text-danger"><span asp-validation-for="Password"></span></small>
+            </div>
+
+            <div class="ConfirmPassword">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" type="password" onkeyup="validatePassword(event)" />
+                <small class="text-danger"><span asp-validation-for="ConfirmPassword"></span></small>
+            </div>
+
+            <div class="terms form-checkbox-group">
+                <label class="custom-checkbox">
+                    I have read and accepts the terms and agreements
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <button class="btn-theme">Register</button>
+
+
+        </form>
+
+    </div>
+</section>

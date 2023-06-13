@@ -1,0 +1,98 @@
+﻿@model int
+@inject ProductRepository productRepo
+
+
+<partial name="/Views/Partials/Breadcrumbs/_ProductDetailBreadcrumb.cshtml" />
+
+@{
+    var product = await productRepo.GetAsync(x => x.Id == Model);
+}
+
+@*@if(product != null)
+{
+    <div>
+        <div>@product.Id</div>
+        <div>@product.Title</div>
+        <div>
+            @foreach (var tag in product.ProductTags)
+            {
+                <span class="me-2">@tag.Tag.TagName</span>
+            }
+        </div>
+        <div>@product.Description</div>
+    </div>
+}*@
+
+@if(product != null)
+{
+    <section class="product-showcase">
+        <div class="container">
+            <div class="content-image">
+                <img src="images/placeholders/501x430.svg" alt="">
+
+                <div class="small-img">
+                    <img src="images/placeholders/120x113.svg" alt="">
+                    <img src="images/placeholders/120x113.svg" alt="">
+                    <img src="images/placeholders/120x113.svg" alt="">
+                    <img src="images/placeholders/120x113.svg" alt="">
+                </div>
+            </div>
+
+            <div class="content-right">
+                <div class="product-info">
+                    <h1 class="title">@product.Title</h1>
+                    <span class="description">@product.Description</span>
+                </div>
+
+                <div class="reviews">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span>16 Reviews</span>
+                </div>
+
+                <span class="price">@product.Price</span>
+
+                <div class="buy-btn">
+                    <div class="quantity">
+                        <div class="quant-btn">
+                            <button class="btn-outline-white"><i class="fa-solid fa-minus"></i></button>
+                            <span class="btn-outline-white amount">2</span>
+                            <button class="btn-outline-white"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="cart-btn btn-theme">Add to Cart<i class="add-cart fa-regular fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="in-stock">
+                    <div class="dots">
+                        <i class="fa-solid fa-circle nr-1"></i>
+                        <i class="fa-solid fa-circle nr-2"></i>
+                        <i class="fa-solid fa-circle nr-3"></i>
+                    </div>
+                    <span>SKU: N/A</span>
+                </div>
+
+                <button class="btn-outline-white wish-btn">Add to wishlist</button>
+
+                <span class="info-category">Category: Table Lamp, Light</span>
+            </div>
+        </div>
+    </section>
+    <partial name="/Views/Partials/Showcases/_DescriptionShowcase.cshtml" />
+    <partial name="/Views/Partials/_RelatedProducts.cshtml" />
+    <partial name="/Views/Partials/_Pictures.cshtml" />
+
+}
+else
+{
+    <H1>Could not find the product</H1>
+}
+
+

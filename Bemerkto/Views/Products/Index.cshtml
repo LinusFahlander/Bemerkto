@@ -1,0 +1,20 @@
+﻿@inject ProductRepository productRepo
+
+<partial name="/Views/Partials/Breadcrumbs/_ProductBreadcrumb.cshtml" />
+<section products-list>
+    <div>
+        @foreach (var product in await productRepo.GetAllAsync())
+        {
+            <div class="container">
+                <div><a asp-action="details" asp-route-id="@product.Id" style="font-family: $font-poppins; font-size: 24px; color: #292929;">@product.Title</a></div>
+                <div>
+                    Tags:
+                    @foreach (var tag in product.ProductTags)
+                    {
+                        <span class="me-2" style="font-family: $font-roboto; font-size: 16px;">@tag.Tag.TagName,</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,222 @@
+.product-showcase {
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+
+        .content-image{
+            flex: 1;
+
+            .small-img{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 5px;
+            }
+        }
+
+        .content-right {
+            margin-left: 60px;
+            flex: 2;
+            text-align: left;
+
+            .title {
+                font-family: $font-poppins;
+                font-size: 24px;
+                color: $color-dark-2;
+            }
+
+            .description {
+                font-family: $font-roboto;
+                font-size: 16px;
+            }
+
+
+            .reviews {
+                display: flex;
+                margin-top: 30px;
+
+                .stars {
+                    color: $color-yellow;
+                }
+
+                span {
+                    margin-left: 10px;
+                }
+            }
+
+            .price {
+                display: flex;
+                margin-top: 40px;
+                font-family: $font-poppins;
+                font-size: 24px;
+                font-weight: $font-weight-semibold;
+                color: $color-dark-2;
+
+            }
+
+            .buy-btn {
+                display: flex;
+                margin-top: 40px;
+                font-family: $font-poppins;
+
+                .quantity {
+                    display: flex;
+
+                    .quant-btn {
+                        display: flex;
+
+                        margin-right: 25px;
+
+                        .amount {
+                            color: $color-dark-3;
+                        }
+
+                        .btn-outline-white {
+                            border: 1px solid $color-dark-5;
+                        }
+
+                    }
+                }
+                .cart-btn {
+
+                    .add-cart {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .in-stock {
+                display: flex;
+                margin-top: 20px;
+
+                .dots {
+                    border: none;
+
+                    .nr-1 {
+                        color: $color-theme-1;
+                    }
+                    .nr-2 {
+                        color: $color-yellow;
+                    }
+                    .nr-3 {
+                        color: $color-green;
+                    }
+                }
+
+                span {
+                    font-family: $font-roboto;
+                    font-weight: $font-weight-regular;
+                    font-size: 16px;
+                    margin-left: 30px;
+                } 
+            }
+
+            .wish-btn {
+                margin-top: 20px;
+            }
+
+            .info-category {
+                display: flex;
+                margin-top: 20px;
+            }
+
+
+
+        }
+    }
+}
+
+.description-showcase {
+    
+    .container {
+        margin-top: 30px;
+
+        .info-btns {
+            display: flex;
+
+            .info-btn {
+                width: 100%;
+            }
+        }
+
+        .title {
+            margin-top: 30px;
+            font-family: $font-poppins;
+            font-size: 24px;
+            color: $color-dark-2;
+        }
+        .description {
+            display: flex;
+            
+            .left {
+                font-family: $font-roboto;
+                font-size: 16px;
+            }
+    
+            span {
+                margin-left: 30px;
+            }
+        }
+    }
+}
+
+.related-products {
+    .container {
+
+        .title {
+            font-family: $font-poppins;
+            font-size: 24px;
+            color: $color-dark-2;
+        }
+        .collection-grid {
+            margin-top: 30px;
+            display: flex;
+    
+            .collection-item {
+                width: 100%;
+                margin: 15px;
+
+                .body {
+                    .title {
+                        font-size: 14px;
+                        font-weight: $font-weight-medium;
+                    }
+                }
+            }
+        }
+        .collection-item:first-child {
+            margin-left: 0;
+        }
+        .collection-item:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.pictures {
+    margin-bottom: 85px;
+    background-color: $color-dark-5;
+
+    .container {
+        padding-top: 40px;
+        padding-bottom: 60px;
+
+        .collection-grid {
+            margin-top: 30px;
+            display: flex;
+
+            .collection-item {
+                width: 100%;
+                margin: 15px;
+            }
+        }
+        .collection-item:first-child {
+            margin-left: 0;
+        }
+        .collection-item:last-child {
+            margin-right: 0;
+        }
+    }
+}

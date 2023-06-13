@@ -1,0 +1,60 @@
+﻿@model ContactFormViewModel
+@{
+    ViewData["Title"] = "Contact us";
+}
+
+<partial name="/Views/Partials/Breadcrumbs/_ContactBreadcrumb.cshtml" />
+
+<section class="contact-form">
+    <div class="container">
+        <div class="title">Whrite something</div>
+
+        <form asp-action="Index" asp-controller="contacts" method="post" novalidate>
+
+            <div class="name form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="Name"></span></small>
+            </div>
+
+            <div class="email form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="Email"></span></small>
+            </div>
+
+            <div class="phoneNumber form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="PhoneNumber"></span></small>
+            </div>
+
+            <div class="companyName form-group">
+                <label asp-for="CompanyName"></label>
+                <input asp-for="CompanyName" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="CompanyName"></span></small>
+            </div>
+
+            <div class="message form-group">
+                <label asp-for="Message"></label>
+                <input asp-for="Message" onkeyup="validateText(event)" />
+                <small class="text-danger"><span asp-validation-for="Message"></span></small>
+            </div>
+
+            <div class="terms form-checkbox-group">
+                <label class="custom-checkbox">
+                    I have read and accepts the terms and agreements
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <button class="btn-theme">Submit</button>
+
+
+        </form>
+
+    </div>
+</section>
